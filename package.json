@@ -5,9 +5,7 @@
   "main": "main.js",
   "scripts": {
     "dev-server": "cross-env NODE_ENV=development webpack-dev-server --inline --hot",
-    "dev": "cross-env NODE_ENV=development eletron ./",
-    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
-    "start": "cross-env NODE_ENV=production electron ./"
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules && electron ./"
   },
   "repository": {
     "type": "git",

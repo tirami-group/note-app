@@ -42,7 +42,6 @@ module.exports = {
     }
   },
   devServer: {
-    historyApiFallback: true,
     stats: 'errors-only',
     port: 5000
   },
