@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import Sidebar from './components/sidebar.vue'
-import ViewNote from './components/view-note.vue'
+import Sidebar from './components/Sidebar.vue'
+import ViewNote from './components/View.vue'
 
 export default {
   name: 'app',
@@ -41,4 +41,14 @@ div {
   min-height: 100%;
   flex-basis: 70%;
 }
+</style>
+
+<style>
+    html, body, #app {
+      height: 100%;
+    }
+    html, body {
+      margin: 0;
+      border: none;
+    }
 </style>
