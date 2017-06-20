@@ -7,7 +7,7 @@
 
 <script>
 import Sidebar from './components/Sidebar.vue'
-import ViewNote from './components/View.vue'
+import ViewNote from './components/ViewNote.vue'
 
 export default {
   name: 'app',
@@ -25,7 +25,7 @@ export default {
 
 <style scoped>
 div {
-  height: 100%;
+  height: 100vh;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -33,13 +33,15 @@ div {
 }
  
 .side {
-  min-height: 100%;
-  flex-basis: 30%;
+  height: 100vh;
+  flex-basis: 25%;
+  overflow: auto;
 }
 
 .content {
-  min-height: 100%;
-  flex-basis: 70%;
+  min-height: 100vh;
+  flex-basis: 75%;
+  overflow: auto;
 }
 </style>
 

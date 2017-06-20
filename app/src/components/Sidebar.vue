@@ -1,8 +1,12 @@
 <template>
   <aside>
-    <div>
+    <div class="search">
+      <input type="text" v-model="searchStr" placeholder="Search" />
+    </div>
+    <div class="list">
       <a v-for="note in notes"
-         :class="{ active: activeNote === note }"
+         @click="click(note)"
+         :class="{ active: currentNote === note }"
          href="#">
          <span class="note-title">{{ note.title }}</span>
       </a>
@@ -15,16 +19,21 @@ export default {
   name: 'sidebar',
   data () {
     return {
-      notes: [
-        {title: 'Note 1', content: 'Hehehehehehehh'},
-        {title: 'Note 2', content: 'Hahahahahhahah'}
-      ]
+      searchStr: '',
     }
   },
   computed: {
-      activeNote: function () {
-        return this.notes[0]
-      }
+    notes () {
+      return this.$store.state.notes
+    },
+    currentNote () {
+      return this.$store.state.currentNote
+    }
+  },
+  methods: {
+    click (note) {
+      this.$store.state.currentNote = note
+    }
   }
 }
 </script>
@@ -48,5 +57,15 @@ a {
 aside {
   padding: 0;
   background-color: #eeeeee;
+}
+
+.search {
+  text-align: center;
+  margin: 2em;
+}
+
+.search input {
+  width: 75%;
+  height: 2em;
 }
 </style>

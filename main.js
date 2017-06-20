@@ -1,22 +1,23 @@
-const electron = require('electron')
-const app = electron.app
-const BrowserWindow = electron.BrowserWindow
+const {app, BrowserWindow} = require('electron')
+const fs = require('fs')
+const config = JSON.parse(fs.readFileSync('config.json'))
 
-const path = require('path')
-const url = require('url')
+let win
 
-let mainWindow
+function createWindow () {
 
-let createWindow = () => {
-  mainWindow = new BrowserWindow({ width: 800, height: 600 })
+  app.server = require(__dirname + '/app/app')()
 
-  mainWindow.loadURL(url.format({
-    pathname: path.join(__dirname, 'index.html'),
-    protocol: 'file:',
-    slashes: true
-  }))
+  win = new BrowserWindow()
+  win.maximize()
 
-  mainWindow.on('closed', () => { mainWindow = null })
+  win.loadURL(`http://${config.server.host}:${config.server.port}`)
+
+  win.focus();
+
+  win.on('closed', () => {
+    win = null
+  })
 }
 
 app.on('ready', createWindow)
@@ -28,7 +29,7 @@ app.on('window-all-closed', () => {
 })
 
 app.on('activate', () => {
-  if (mainWindow === null) {
+  if (win === null) {
     createWindow()
   }
 })

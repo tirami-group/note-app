@@ -1,13 +1,16 @@
-let path = require('path')
-let webpack = require('webpack')
+const path = require('path')
+const webpack = require('webpack')
+
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
   entry: {
-    app: './src/main.js'
+    app: './app/src/main.js'
   },
   output: {
-    path: path.resolve(__dirname, './dist'),
-    publicPath: '/dist/',
+    path: path.resolve(__dirname, './app/public'),
+    publicPath: '',
     filename: 'build.js'
   },
   module: {
@@ -43,17 +46,27 @@ module.exports = {
   },
   devServer: {
     stats: 'errors-only',
+    contentBase: './app/public',
     port: 5000
   },
   performance: {
     hints: false
   },
-  devtool: '#eval-source-map'
+  devtool: '#eval-source-map',
+  plugins: [
+    new CopyWebpackPlugin([
+      { from: './app/src/data/*', to: './data/', flatten: true }
+    ]),
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: './app/src/index.html'
+    })
+  ]
 }
 
 if (process.env.NODE_ENV === 'production') {
   module.exports.devtool = '#source-map'
-  module.exports.plugins = [
+  module.exports.plugins = (module.exports.plugins || []).concat([
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: '"production"'
@@ -67,6 +80,7 @@ if (process.env.NODE_ENV === 'production') {
     }),
     new webpack.LoaderOptionsPlugin({
       minimize: true
-    })
-  ]
+    }),
+    ...module.exports.plugins
+  ])
 }
