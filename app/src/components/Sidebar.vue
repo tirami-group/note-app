@@ -32,7 +32,7 @@ export default {
   },
   methods: {
     click (note) {
-      this.$store.state.currentNote = note
+      this.$store.commit('setActive', note)
     }
   }
 }

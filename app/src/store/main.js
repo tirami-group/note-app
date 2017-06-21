@@ -58,7 +58,7 @@ export default new Vuex.Store({
     notes: notes,
     currentNote: null
   },
-  mutation: {
+  mutations: {
     setActive (state, note) {
       state.currentNote = note
     }
