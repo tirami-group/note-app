@@ -1,14 +1,8 @@
-module.exports = () => {
+module.exports = (config) => {
   const fs = require('fs')
   const path = require('path')
   const express = require('express')
   const app = express()
-  const config = {
-    server: {
-      host: 'localhost',
-      port: '3000'
-    }
-  }
 
   app.use(express.static('app/public'))
 

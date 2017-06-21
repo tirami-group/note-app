@@ -25,7 +25,9 @@ export default {
   },
   computed: {
     notes() {
-      return this.$store.state.notes
+      return this.$store.state.notes.filter(x => x.title
+                                                  .toLowerCase()
+                                                  .includes(this.searchStr.toLowerCase()))
     },
     currentNote() {
       return this.$store.state.currentNote

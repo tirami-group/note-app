@@ -11,7 +11,7 @@ let win
 
 function createWindow () {
 
-  app.server = require(__dirname + '/app/app')()
+  app.server = require(__dirname + '/app/app')(config)
 
   win = new BrowserWindow()
   win.maximize()

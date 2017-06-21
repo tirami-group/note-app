@@ -27,17 +27,17 @@ const notes = [
 
   {
     "id": 2,
-    "title": "Customer Archetype",
-    "date": "2017-05-22",
+    "title": "Customer Brchetype",
+    "date": "2017-05-23",
     "author": "Wenchuan Gu",
     "content": [
       {
         "image": "1-1.png",
-        "audio": "1-1.ogg"
+        "audio": "1-2.ogg"
       },
       {
         "image": "1-2.png",
-        "audio": "1-2.ogg"
+        "audio": "1-1.ogg"
       },
       {
         "image": "1-3.png",
@@ -48,13 +48,13 @@ const notes = [
 
   {
     "id": 3,
-    "title": "Customer Archetype",
-    "date": "2017-05-22",
+    "title": "Customer Crchetype",
+    "date": "2017-05-24",
     "author": "Wenchuan Gu",
     "content": [
       {
         "image": "1-1.png",
-        "audio": "1-1.ogg"
+        "audio": "1-3.ogg"
       },
       {
         "image": "1-2.png",
@@ -62,7 +62,7 @@ const notes = [
       },
       {
         "image": "1-3.png",
-        "audio": "1-3.ogg"
+        "audio": "1-1.ogg"
       }
     ]
   }

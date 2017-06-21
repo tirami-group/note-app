@@ -43,6 +43,19 @@ div {
   flex-basis: 80%;
   overflow: auto;
 }
+
+@media (max-width: 960px) {
+  .side {
+    flex-basis: 35%;
+  }
+  .content {
+    flex-basis: 65%;
+  }
+
+  html {
+    font-size: 12px;
+  }
+}
 </style>
 
 <style>
@@ -57,5 +70,9 @@ html, body {
 
 html {
   font-family: 'Lora', serif;
+}
+
+::selection {
+  background-color: #ccc;
 }
 </style>
