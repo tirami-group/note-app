@@ -4,12 +4,13 @@
       <input type="text" v-model="searchStr" placeholder="Search" />
     </div>
     <div class="list">
-      <a v-for="note in notes"
-         @click="click(note)"
-         :class="{ active: currentNote === note }"
-         href="#">
-         <span class="note-title">{{ note.title }}</span>
-      </a>
+      <div  :class="{ active: currentNote === note }" class="note"
+            v-for="note in notes" @click="click(note)">
+      <span class="note-title">{{ note.title }}</span>
+      <span class="meta">
+        {{ note.date }} / {{ note.author }}
+      </span>
+      </div>
     </div>
   </aside>
 </template>
@@ -17,21 +18,21 @@
 <script>
 export default {
   name: 'sidebar',
-  data () {
+  data() {
     return {
       searchStr: '',
     }
   },
   computed: {
-    notes () {
+    notes() {
       return this.$store.state.notes
     },
-    currentNote () {
+    currentNote() {
       return this.$store.state.currentNote
     }
   },
   methods: {
-    click (note) {
+    click(note) {
       this.$store.commit('setActive', note)
     }
   }
@@ -44,9 +45,34 @@ a {
   text-decoration: none;
   text-align: left;
   color: inherit;
+  margin: 0;
+}
+
+.note {
   border-bottom: 1px solid #dedede;
   padding: 1em;
-  margin: 0;
+}
+
+.note:first-child {
+  border-top: 1px solid #dedede;
+}
+
+.note:hover {
+  cursor: pointer;
+}
+
+.note-title, .meta {
+  display: block;
+  margin-bottom: 0.5em;
+}
+
+.note-title {
+  font-size: 1.2em;
+}
+
+.meta {
+  font-size: 1em;
+  color: rgba(0, 0, 0, 0.7);
 }
 
 .active {
@@ -61,11 +87,23 @@ aside {
 
 .search {
   text-align: center;
-  margin: 2em;
+  margin: 1em;
 }
 
 .search input {
-  width: 75%;
+  width: 80%;
   height: 2em;
+  border: 1px solid #aeaeae;
+  border-radius: 5px;
+  color: #aaa;
+  background-position: 0.5em 0.5em;
+  background-image: url('./assets/search.svg');
+  background-repeat: no-repeat;
+  background-size: 1.2em;
+  text-align: center
+}
+
+.search input:focus {
+  outline: none;
 }
 </style>

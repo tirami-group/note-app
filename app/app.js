@@ -1,9 +1,14 @@
 module.exports = () => {
   const fs = require('fs')
   const path = require('path')
-  const config = JSON.parse(fs.readFileSync('config.json'))
   const express = require('express')
   const app = express()
+  const config = {
+    server: {
+      host: 'localhost',
+      port: '3000'
+    }
+  }
 
   app.use(express.static('app/public'))
 

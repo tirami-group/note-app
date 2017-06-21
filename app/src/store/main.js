@@ -7,15 +7,20 @@ const notes = [
   {
     "id": 1,
     "title": "Customer Archetype",
+    "date": "2017-05-22",
+    "author": "Wenchuan Gu",
     "content": [
       {
-        "image": "1-1.png"
+        "image": "1-1.png",
+        "audio": "1-1.ogg"
       },
       {
-        "image": "1-2.png"
+        "image": "1-2.png",
+        "audio": "1-2.ogg"
       },
       {
-        "image": "1-3.png"
+        "image": "1-3.png",
+        "audio": "1-3.ogg"
       }
     ]
   },
@@ -23,15 +28,20 @@ const notes = [
   {
     "id": 2,
     "title": "Customer Archetype",
+    "date": "2017-05-22",
+    "author": "Wenchuan Gu",
     "content": [
       {
-        "image": "1-1.png"
+        "image": "1-1.png",
+        "audio": "1-1.ogg"
       },
       {
-        "image": "1-1.png"
+        "image": "1-2.png",
+        "audio": "1-2.ogg"
       },
       {
-        "image": "1-3.png"
+        "image": "1-3.png",
+        "audio": "1-3.ogg"
       }
     ]
   },
@@ -39,15 +49,20 @@ const notes = [
   {
     "id": 3,
     "title": "Customer Archetype",
+    "date": "2017-05-22",
+    "author": "Wenchuan Gu",
     "content": [
       {
-        "image": "1-1.png"
+        "image": "1-1.png",
+        "audio": "1-1.ogg"
       },
       {
-        "image": "1-2.png"
+        "image": "1-2.png",
+        "audio": "1-2.ogg"
       },
       {
-        "image": "1-3.png"
+        "image": "1-3.png",
+        "audio": "1-3.ogg"
       }
     ]
   }

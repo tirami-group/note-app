@@ -34,23 +34,28 @@ div {
  
 .side {
   height: 100vh;
-  flex-basis: 25%;
+  flex-basis: 20%;
   overflow: auto;
 }
 
 .content {
   min-height: 100vh;
-  flex-basis: 75%;
+  flex-basis: 80%;
   overflow: auto;
 }
 </style>
 
 <style>
-    html, body, #app {
-      height: 100%;
-    }
-    html, body {
-      margin: 0;
-      border: none;
-    }
+html, body, #app {
+  height: 100%;
+}
+
+html, body {
+  margin: 0;
+  border: none;
+}
+
+html {
+  font-family: 'Lora', serif;
+}
 </style>

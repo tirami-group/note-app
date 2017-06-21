@@ -1,6 +1,11 @@
 const {app, BrowserWindow} = require('electron')
 const fs = require('fs')
-const config = JSON.parse(fs.readFileSync('config.json'))
+const config = {
+  server: {
+    host: 'localhost',
+    port: '3000'
+  }
+}
 
 let win
 
@@ -13,7 +18,9 @@ function createWindow () {
 
   win.loadURL(`http://${config.server.host}:${config.server.port}`)
 
-  win.focus();
+  win.focus()
+
+  win.setMenu(null)
 
   win.on('closed', () => {
     win = null

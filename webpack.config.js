@@ -3,6 +3,7 @@ const webpack = require('webpack')
 
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
   entry: {
@@ -29,6 +30,13 @@ module.exports = {
         test: /\.js$/,
         loader: 'babel-loader',
         exclude: /node_modules/
+      },
+      {
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+          fallback: "style-loader",
+          use: "css-loader"
+        })
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
@@ -60,7 +68,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: './app/src/index.html'
-    })
+    }),
+    new ExtractTextPlugin("styles.css")
   ]
 }
 

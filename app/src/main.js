@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import store from './store/main'
+import './fonts.css'
 
 new Vue({
   el: '#app',
