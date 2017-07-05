@@ -3,7 +3,7 @@ const fs = require('fs')
 const config = {
   server: {
     host: 'localhost',
-    port: '3000'
+    port: '45297'
   }
 }
 
@@ -11,12 +11,12 @@ let win
 
 function createWindow () {
 
-  app.server = require(__dirname + '/app/app')(config)
+  //app.server = require(__dirname + '/app/app')(config)
 
   win = new BrowserWindow()
   win.maximize()
 
-  win.loadURL(`http://${config.server.host}:${config.server.port}`)
+  win.loadURL(`file://${__dirname}/app/public/index.html`)
 
   win.focus()
 
