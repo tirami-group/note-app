@@ -11,7 +11,7 @@ let win
 
 function createWindow () {
 
-  //app.server = require(__dirname + '/app/app')(config)
+  // app.server = require(__dirname + '/app/app')(config)
 
   win = new BrowserWindow()
   win.maximize()
@@ -30,9 +30,7 @@ function createWindow () {
 app.on('ready', createWindow)
 
 app.on('window-all-closed', () => {
-  if (process.platform !== 'darwin') {
-    app.quit()
-  }
+  app.quit()
 })
 
 app.on('activate', () => {
