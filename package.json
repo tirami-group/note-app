@@ -47,7 +47,7 @@
     "webpack-hot-middleware": "^2.18.0"
   },
   "dependencies": {
-    "electron": "^1.6.11",
+    "electron": "^9.1.0",
     "express": "^4.15.3",
     "vue": "^2.3.4",
     "vuex": "^2.3.1"
